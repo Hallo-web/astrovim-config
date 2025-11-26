@@ -25,9 +25,12 @@ return {
       opts = function(_, config)
         local null_ls = require("null-ls")
         config.sources = config.sources or {}
+        -- Formatter
         table.insert(config.sources, null_ls.builtins.formatting.clang_format)
-        return config
-      end,
+        -- Linter
+        table.insert(config.sources, null_ls.builtins.diagnostics.clang_check)
+     return config
+     end,
     },
   },
 
