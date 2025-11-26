@@ -2,7 +2,7 @@ return {
   -- Configure AstroNvim updates
   updater = {
     remote = "origin",
-    channel = "stable", -- "stable" or "nightly"
+    channel = "stable",
     version = "latest",
     branch = "main",
     commit = nil,
@@ -25,12 +25,15 @@ return {
       opts = function(_, config)
         local null_ls = require("null-ls")
         config.sources = config.sources or {}
-        -- Formatter
+        
+        -- Formatter: clang-format for C/C++
         table.insert(config.sources, null_ls.builtins.formatting.clang_format)
-        -- Linter
+        
+        -- Linter: clang-tidy for C/C++ static analysis
         table.insert(config.sources, null_ls.builtins.diagnostics.clang_check)
-     return config
-     end,
+        
+        return config
+      end,
     },
   },
 
@@ -39,6 +42,13 @@ return {
     formatting = {
       format_on_save = {
         enabled = true,
+      },
+    },
+    config = {
+      clangd = {
+        capabilities = {
+          offsetEncoding = "utf-8",
+        },
       },
     },
   },
