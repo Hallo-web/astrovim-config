@@ -1,0 +1,45 @@
+# TU Graz ESP Coding Style
+BasedOnStyle: LLVM
+
+# Braces on new lines (Allman style)
+BreakBeforeBraces: Allman
+
+# Indentation
+IndentWidth: 2
+UseTab: Never
+ContinuationIndentWidth: 2
+
+# Line length
+ColumnLimit: 120
+
+# Functions
+AllowShortFunctionsOnASingleLine: None
+AlwaysBreakAfterReturnType: None
+
+# Control statements
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+
+# Spacing
+SpaceBeforeParens: ControlStatements
+SpaceAfterCStyleCast: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+# Pointers and references
+PointerAlignment: Right
+DerivePointerAlignment: false
+
+# Line breaks
+AlwaysBreakBeforeMultilineStrings: false
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+
+# Comments
+ReflowComments: true
+
+# Other
+MaxEmptyLinesToKeep: 1
+KeepEmptyLinesAtTheStartOfBlocks: false
+SortIncludes: true
