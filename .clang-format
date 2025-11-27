@@ -67,8 +67,3 @@ AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
 AlignOperands: true
 AlignTrailingComments: true
-
-
-
-
-
