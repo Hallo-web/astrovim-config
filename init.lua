@@ -49,6 +49,13 @@ return {
         capabilities = {
           offsetEncoding = "utf-8",
         },
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy=false",  -- Disable clangd's built-in clang-tidy
+          "--completion-style=detailed",
+          "--header-insertion=never",
+        },
       },
     },
   },
