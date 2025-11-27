@@ -1,0 +1,20 @@
+---
+Diagnostics:
+  Suppress:
+    - readability-identifier-naming
+    - readability-function-cognitive-complexity
+    - readability-magic-numbers
+  ClangTidy:
+    Remove: '*'
+    Add:
+      - clang-diagnostic-*
+      - clang-analyzer-*
+      - bugprone-*
+      - performance-*
+  UnusedIncludes: None
+
+CompileFlags:
+  Add: [-Wall, -Wextra]
+
+InlayHints:
+  Enabled: No
