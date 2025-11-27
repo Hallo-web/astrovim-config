@@ -1,35 +1,51 @@
-# TU Graz ESP Coding Style
+---
+# TU Graz ESP Coding Style - Formatting Only
+# Note: clang-format handles formatting, not naming conventions
 BasedOnStyle: LLVM
 
-# Braces on new lines (Allman style)
+# Braces on new lines (Allman style) - CRITICAL FOR TU GRAZ
 BreakBeforeBraces: Allman
 
 # Indentation
 IndentWidth: 2
 UseTab: Never
+TabWidth: 2
 ContinuationIndentWidth: 2
 
 # Line length
-ColumnLimit: 120
+ColumnLimit: 80
 
-# Functions
+# Functions - always break before braces
 AllowShortFunctionsOnASingleLine: None
 AlwaysBreakAfterReturnType: None
 
-# Control statements
+# Control statements - braces always on new line
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLoopsOnASingleLine: false
 AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
 
 # Spacing
 SpaceBeforeParens: ControlStatements
 SpaceAfterCStyleCast: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
+SpaceBeforeAssignmentOperators: true
 
-# Pointers and references
+# Pointers and references alignment
 PointerAlignment: Right
 DerivePointerAlignment: false
+
+# Always break before else
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: true
+  AfterControlStatement: Always
+  AfterStruct: true
+  AfterEnum: true
+  AfterUnion: true
+  BeforeElse: true
+  AfterCaseLabel: true
 
 # Line breaks
 AlwaysBreakBeforeMultilineStrings: false
@@ -38,8 +54,21 @@ BreakBeforeTernaryOperators: true
 
 # Comments
 ReflowComments: true
+SpacesBeforeTrailingComments: 2
 
 # Other
 MaxEmptyLinesToKeep: 1
 KeepEmptyLinesAtTheStartOfBlocks: false
-SortIncludes: true
+SortIncludes: CaseSensitive
+
+# Alignment
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignOperands: true
+AlignTrailingComments: true
+
+
+
+
+

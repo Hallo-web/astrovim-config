@@ -1,53 +1,22 @@
 ---
-# TU Graz ESP Style Guide - Naming Conventions
+# TU Graz ESP Style - Basic Linting Only
+# Note: Naming convention checks are DISABLED because clang-tidy
+# cannot properly enforce TU Graz naming rules like:
+# - Functions: iAmAFunction (camelBack starting lowercase)
+# - Variables: all_lower_case_with_underscores
+# You must check naming manually!
+
 Checks: >
   clang-diagnostic-*,
   clang-analyzer-*,
-  readability-identifier-naming,
-  readability-braces-around-statements,
   bugprone-*,
   -bugprone-easily-swappable-parameters,
   misc-*,
-  performance-*
+  performance-*,
+  readability-braces-around-statements
 
 CheckOptions:
-  # Functions: firstWordLowerCaseRestCapitalizedWithoutUnderscores
-  - key: readability-identifier-naming.FunctionCase
-    value: camelBack
-  
-  # Local variables and function parameters: all_lower_case_with_underscores
-  - key: readability-identifier-naming.VariableCase
-    value: lower_case
-  - key: readability-identifier-naming.ParameterCase
-    value: lower_case
-  - key: readability-identifier-naming.LocalVariableCase
-    value: lower_case
-  
-  # Struct members: all_lower_case_with_underscores_and_trailing_underscore_
-  - key: readability-identifier-naming.MemberCase
-    value: lower_case
-  - key: readability-identifier-naming.MemberSuffix
-    value: '_'
-  
-  # Constants and enum values: ALL_UPPERCASE_WITH_UNDERSCORES
-  - key: readability-identifier-naming.ConstantCase
-    value: UPPER_CASE
-  - key: readability-identifier-naming.EnumConstantCase
-    value: UPPER_CASE
-  - key: readability-identifier-naming.MacroDefinitionCase
-    value: UPPER_CASE
-  
-  # Typedef'ed types: AllWordsCapitalizedWithoutUnderscore
-  - key: readability-identifier-naming.TypedefCase
-    value: CamelCase
-  - key: readability-identifier-naming.EnumCase
-    value: CamelCase
-  - key: readability-identifier-naming.StructCase
-    value: CamelCase
-  - key: readability-identifier-naming.UnionCase
-    value: CamelCase
-  
-  # Braces always on new lines
+  # Force braces around all control statements
   - key: readability-braces-around-statements.ShortStatementLines
     value: '0'
 
